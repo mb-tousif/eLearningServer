@@ -1,9 +1,12 @@
-import { findUserByEmail, findUserByToken, signupService } from "../Services/userServices.js";
+import { findUserByEmail, signupService } from "../Services/userServices.js";
+import { generateToken } from "../Utilities/token.js";
 
 export const signup = async (req, res) => {
   try {
-    const user = await signupService(req.body);
-    await user.save({ validateBeforeSave: true });
+    const userInfo = req.body;
+    const result = await signupService(userInfo);
+    // console.log(result);
+    await result.save();
     res.status(200).json({
       status: "success",
       message: "Successfully signed up",
@@ -11,7 +14,8 @@ export const signup = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: "fail",
-      message: "Signed up Failed",
+      message: error.message,
+      // message: "Signed up Failed",
     });
   }
 };
@@ -73,59 +77,3 @@ export const login = async (req, res) => {
   }
 };
 
-export const getSingleUser = async (req, res) => {
-  try {
-    const user = await findUserByEmail(req.user?.email);
-    const { password: pwd, ...others } = user.toObject();
-    res.status(200).json({
-      status: "success",
-      data: others,
-    });
-  } catch (error) {
-    res.status(500).json({
-      status: "fail",
-      error,
-    });
-  }
-};
-
-export const confirmEmail = async (req, res) => {
-  try {
-    const { token } = req.params;
-
-    const user = await findUserByToken(token);
-
-    if (!user) {
-      return res.status(403).json({
-        status: "fail",
-        error: "Invalid token",
-      });
-    }
-
-    const expired = new Date() > new Date(user.confirmationTokenExpires);
-
-    if (expired) {
-      return res.status(401).json({
-        status: "fail",
-        error: "Token expired",
-      });
-    }
-
-    user.status = "active";
-    user.confirmationToken = undefined;
-    user.confirmationTokenExpires = undefined;
-
-    user.save({ validateBeforeSave: false });
-
-    res.status(200).json({
-      status: "success",
-      message: "Successfully activated your account.",
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      status: "fail",
-      error,
-    });
-  }
-};

@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcrypt";
-
-const crypto = await import("node:crypto");
+// const crypto = await import("node:crypto");
+const saltRounds = 10;
 
 export const userSchema = new mongoose.Schema(
   {
@@ -39,7 +39,7 @@ export const userSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: {
-        values: ["Guest", "Student", "Administration", "Teacher"],
+        values: ["Student", "Admin", "Teacher"],
         message: "{VALUE} is not a correct Role for user!",
       },
       required: [true, "Role is required"],
@@ -48,7 +48,7 @@ export const userSchema = new mongoose.Schema(
       type: String,
       validate: [validator.isMobilePhone, "Please provide a valid contact number"],
     },
-    imageURL: {
+    image: {
       type: String,
       validate: [validator.isURL, "Please provide a valid url"],
     },
@@ -78,9 +78,8 @@ userSchema.pre("save", function (next) {
   }
 
   const password = this.password;
-  const hashedPassword = bcrypt.hashSync(password);
+  const hashedPassword = bcrypt.hashSync(password, 10);
   this.password = hashedPassword;
-  this.confirmPassword = undefined;
 
   next();
 
@@ -91,19 +90,7 @@ userSchema.methods.comparePassword = function (password, hash) {
   return isPasswordValid;
 };
 
-userSchema.methods.generateConfirmationToken = function () {
-  const token = crypto.randomBytes(32).toString("hex");
 
-  this.confirmationToken = token;
-
-  const date = new Date();
-
-  date.setDate(date.getDate() + 7);
-  this.confirmationTokenExpires = date;
-
-  return token;
-};
-
-const Users = mongoose.model("User", userSchema);
+const Users = mongoose.model("user", userSchema);
 
 export default Users;
