@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcrypt";
 // const crypto = await import("node:crypto");
-const saltRounds = 10;
+const saltRounds = 12;
 
 export const userSchema = new mongoose.Schema(
   {
@@ -78,7 +78,7 @@ userSchema.pre("save", function (next) {
   }
 
   const password = this.password;
-  const hashedPassword = bcrypt.hashSync(password, 10);
+  const hashedPassword = bcrypt.hashSync(password, 12);
   this.password = hashedPassword;
 
   next();
