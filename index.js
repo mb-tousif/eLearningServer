@@ -18,7 +18,7 @@ app.use("/api/v1", router)
 
 app.get("/", (req, res) => {
   res.send(
-    "<h1 style='text-align: center; padding: 20px; color:#753a88'><span style='color: green'>🛢 </span>Server is successfully 🌽 running 🥦</h1>"
+    "<h1 style='text-align: center; padding: 20px; color:#753a88'><span style='color: green'>🛢 </span>Server is successfully running 🚀</h1>"
   );
 });
 
