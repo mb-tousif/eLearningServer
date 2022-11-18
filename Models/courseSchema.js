@@ -5,7 +5,7 @@ import validator from "validator";
 export const courseSchema = new mongoose.Schema(
   {
     id: String,
-    tittle: {
+    title: {
       type: String,
       required: [true, "Please provide a Course Name."],
       trim: true,
