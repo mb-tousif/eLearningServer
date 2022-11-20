@@ -9,21 +9,27 @@ export const courseSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide a Course Name."],
       trim: true,
-      unique: true
+      unique: true,
+    },
+    category: {
+      type: String,
+      required: [true, "Please provide Category."],
+      unique: true,
     },
     imageUrl: {
       type: String,
       validate: [validator.isURL, "Please provide a valid url"],
     },
-    courseVideo:[
+    courseVideo: [
       {
         id: String,
         playList: String,
         url: {
-        type: String,
-        validate: [validator.isURL, "Please provide a valid url"]
-      }
-    }],
+          type: String,
+          validate: [validator.isURL, "Please provide a valid url"],
+        },
+      },
+    ],
     price: {
       type: Number,
       required: [true, "Please provide Course price."],
@@ -32,7 +38,7 @@ export const courseSchema = new mongoose.Schema(
       type: Number,
       default: 10,
       enum: {
-        values: [ 10, 15, 20],
+        values: [10, 15, 20],
       },
     },
     description: {
