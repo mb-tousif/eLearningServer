@@ -9,11 +9,21 @@ export const courseSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide a Course Name."],
       trim: true,
+      unique: true
     },
     imageUrl: {
       type: String,
       validate: [validator.isURL, "Please provide a valid url"],
     },
+    courseVideo:[
+      {
+        id: String,
+        playList: String,
+        url: {
+        type: String,
+        validate: [validator.isURL, "Please provide a valid url"]
+      }
+    }],
     price: {
       type: Number,
       required: [true, "Please provide Course price."],
@@ -34,7 +44,7 @@ export const courseSchema = new mongoose.Schema(
       type: String,
       default: "Three Months",
       enum: {
-        values: ["Three Months", "Six Months", "One Year"],
+        values: ["One Month", "Three Months", "Six Months", "One Year"],
       },
     },
   },

@@ -1,0 +1,69 @@
+[
+  {
+    "mentor": "Penny Albritton",
+    "category": "Web Development",
+    "title": "Next.js Tutorial for Beginners",
+    "imageUrl": "https://i.ibb.co/z43SHQd/Next.png",
+    "description": "Hey gang, in this Next.js tutorial series you'll learn how to create a website with Next (& React) - including pages, routes, layouts, fetching data & deployment.",
+    "courseVideo": [
+        {
+            "playList": "Introduction & Setup",
+            "url": "https://youtu.be/A63UxsQsEbU"
+        },
+        {
+            "playList": "Pages & Routes",
+            "url": "https://youtu.be/zktJ8-k0JDc"
+        },
+        {
+            "playList": "Adding Other Components",
+            "url": "https://youtu.be/MJT_WXdSPjE"
+        },
+        {
+            "playList": "Linking Between Pages",
+            "url": "https://youtu.be/u8vaAc3ivcY"
+        },
+        {
+            "playList": "Creating a Layout Component",
+            "url": "https://youtu.be/DGn25s42NvQ"
+        },
+        {
+            "playList": "Adding Styles",
+            "url": "https://youtu.be/qKwnlTVAGnA"
+        },
+        {
+            "playList": "Custom 404 Page",
+            "url": "https://youtu.be/dlee0ESZvlc"
+        },
+        {
+            "playList": "Redirecting Users",
+            "url": "https://youtu.be/O3yKwz4wRHc"
+        },
+        {
+            "playList": "Images & Metadata",
+            "url": "https://youtu.be/rHncMH1CfCU"
+        },
+        {
+            "playList": "Fetching Data",
+            "url": "https://youtu.be/zueyEdRZQlk"
+        },
+        {
+            "playList": "Dynamic Routes",
+            "url": "https://youtu.be/WPdJaBFquNc"
+        },
+        {
+            "playList": "Dynamic Routes",
+            "url": "https://youtu.be/mAHqpdVzJmA"
+        },
+        {
+            "playList": "Fetching a Single Item",
+            "url": "https://youtu.be/2zRHlqc0_yw"
+        },
+        {
+            "playList": "Deploying to Vercel",
+            "url": "https://youtu.be/_8wkKL0LKks"
+        }
+    ],
+    "duration": "One Month",
+    "price": 120
+  }
+]
