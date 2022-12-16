@@ -22,7 +22,6 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    // console.log(email, password);
 
     if (!email || !password) {
       return res.status(401).json({
@@ -32,7 +31,6 @@ export const login = async (req, res) => {
     }
 
     const user = await findUserByEmail(email);
-    // console.log(user);
 
     if (!user) {
       return res.status(401).json({
@@ -63,10 +61,16 @@ export const login = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "Successfully logged in",
-      data: {
-        user: others,
-        token,
-      },
+      // data: {
+      //   user: others,
+      //   token,
+      // },
+      user: others,
+      token,
+      // email: user.email,
+      // role: user.role,
+      // userStatus: user.status,
+      // token: user.token
     });
   } catch (error) {
     res.status(500).json({
