@@ -8,62 +8,63 @@
     "courseVideo": [
         {
             "playList": "Introduction & Setup",
-            "url": "https://youtu.be/A63UxsQsEbU"
+            "url": "https://youtube.com/embed/A63UxsQsEbU"
         },
         {
             "playList": "Pages & Routes",
-            "url": "https://youtu.be/zktJ8-k0JDc"
+            "url": "https://youtube.com/embed/zktJ8-k0JDc"
         },
         {
             "playList": "Adding Other Components",
-            "url": "https://youtu.be/MJT_WXdSPjE"
+            "url": "https://youtube.com/embed/MJT_WXdSPjE"
         },
         {
             "playList": "Linking Between Pages",
-            "url": "https://youtu.be/u8vaAc3ivcY"
+            "url": "https://youtube.com/embed/u8vaAc3ivcY"
         },
         {
             "playList": "Creating a Layout Component",
-            "url": "https://youtu.be/DGn25s42NvQ"
+            "url": "https://youtube.com/embed/DGn25s42NvQ"
         },
         {
             "playList": "Adding Styles",
-            "url": "https://youtu.be/qKwnlTVAGnA"
+            "url": "https://youtube.com/embed/qKwnlTVAGnA"
         },
         {
             "playList": "Custom 404 Page",
-            "url": "https://youtu.be/dlee0ESZvlc"
+            "url": "https://youtube.com/embed/dlee0ESZvlc"
         },
         {
             "playList": "Redirecting Users",
-            "url": "https://youtu.be/O3yKwz4wRHc"
+            "url": "https://youtube.com/embed/O3yKwz4wRHc"
         },
         {
             "playList": "Images & Metadata",
-            "url": "https://youtu.be/rHncMH1CfCU"
+            "url": "https://youtube.com/embed/rHncMH1CfCU"
         },
         {
             "playList": "Fetching Data",
-            "url": "https://youtu.be/zueyEdRZQlk"
+            "url": "https://youtube.com/embed/zueyEdRZQlk"
         },
         {
             "playList": "Dynamic Routes",
-            "url": "https://youtu.be/WPdJaBFquNc"
+            "url": "https://youtube.com/embed/WPdJaBFquNc"
         },
         {
             "playList": "Dynamic Routes",
-            "url": "https://youtu.be/mAHqpdVzJmA"
+            "url": "https://youtube.com/embed/mAHqpdVzJmA"
         },
         {
             "playList": "Fetching a Single Item",
-            "url": "https://youtu.be/2zRHlqc0_yw"
+            "url": "https://youtube.com/embed/2zRHlqc0_yw"
         },
         {
             "playList": "Deploying to Vercel",
-            "url": "https://youtu.be/_8wkKL0LKks"
+            "url": "https://youtube.com/embed/_8wkKL0LKks"
         }
     ],
     "duration": "One Month",
+    "quantity": 1,
     "price": 120
   }
 ]
