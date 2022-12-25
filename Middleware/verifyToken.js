@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import { promisify } from "util";
+import Users from "../Models/userSchema.js";
 
 export const verifyToken = async (req, res, next) => {
   try {
@@ -17,7 +18,7 @@ export const verifyToken = async (req, res, next) => {
       process.env.SECRET_TOKEN
     );
 
-    // const user = User.findOne({ email: decoded.email })
+    const user = Users.findOne({ email: decoded.email })
     req.user = decoded;
     next();
   } catch (error) {

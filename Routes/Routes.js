@@ -3,7 +3,6 @@ import { addBlog, allBlogs, singleBlog } from "../Controllers/blogController.js"
 import { addCourse, allCourses, singleCourse } from "../Controllers/courseController.js";
 import { addReview, allReviews } from "../Controllers/reviewController.js";
 import { login, signup } from "../Controllers/userController.js";
-// import {verifyToken} from "../Middleware/verifyToken.js";
 
 
 const router = express.Router();
