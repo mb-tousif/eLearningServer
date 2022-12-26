@@ -1,4 +1,4 @@
-import { findUserByEmail, signupService } from "../Services/userServices.js";
+import { findUserByEmail, getUsers, signupService } from "../Services/userServices.js";
 import { generateToken } from "../Utilities/token.js";
 
 export const signup = async (req, res) => {
@@ -79,4 +79,19 @@ export const login = async (req, res) => {
     });
   }
 };
+
+export const getAllUser = async ( res, req ) => {
+  try {
+    const users = await getUsers();
+    res.status(200).json({
+      status: "success",
+      data: users,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "fail",
+      message: "Could not find any Users",
+    });
+  }
+}
 

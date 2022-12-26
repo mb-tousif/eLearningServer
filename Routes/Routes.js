@@ -2,12 +2,13 @@ import express from "express";
 import { addBlog, allBlogs, singleBlog } from "../Controllers/blogController.js";
 import { addCourse, allCourses, singleCourse } from "../Controllers/courseController.js";
 import { addReview, allReviews } from "../Controllers/reviewController.js";
-import { login, signup } from "../Controllers/userController.js";
+import { getAllUser, login, signup } from "../Controllers/userController.js";
 
 
 const router = express.Router();
 
 // Authentication Routes
+router.get("/allUsers", getAllUser);
 router.post("/signup", signup);
 router.post("/login", login);
 
@@ -24,5 +25,8 @@ router.post("/blog", addBlog);
 // Review Routes
 router.post("/review", addReview);
 router.get("/allReviews", allReviews);
+
+// Payment Gateway Routes
+router.post("/course-payment", )
 
 export default router;
