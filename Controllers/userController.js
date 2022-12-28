@@ -80,7 +80,7 @@ export const login = async (req, res) => {
   }
 };
 
-export const getAllUser = async ( res, req ) => {
+export const getAllUser = async ( req, res ) => {
   try {
     const users = await getUsers();
     res.status(200).json({

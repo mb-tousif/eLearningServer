@@ -1,13 +1,21 @@
 import mongoose from "mongoose";
 
 export const paymentSchema = new mongoose.Schema({
-  userId: String,
-  payment: {
-    type: Boolean,
-    enum: [true, false],
+  id: String,
+  name: {
+    type: String,
+  },
+  email: {
+    type: String,
+  },
+  paymentId: {
+    type: String,
+  },
+  amount: {
+    type: Number,
   },
 });
 
-const paymentModel = mongoose.model("Payment", paymentSchema);
+const paymentData = mongoose.model("payment", paymentSchema);
 
-export default paymentModel;
+export default paymentData;

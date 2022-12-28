@@ -1,6 +1,7 @@
 import express from "express";
 import { addBlog, allBlogs, singleBlog } from "../Controllers/blogController.js";
 import { addCourse, allCourses, singleCourse } from "../Controllers/courseController.js";
+import { createPayment, getPayment, storePayment } from "../Controllers/paymentController.js";
 import { addReview, allReviews } from "../Controllers/reviewController.js";
 import { getAllUser, login, signup } from "../Controllers/userController.js";
 
@@ -27,6 +28,8 @@ router.post("/review", addReview);
 router.get("/allReviews", allReviews);
 
 // Payment Gateway Routes
-router.post("/course-payment", )
+router.post('/chargePayment', createPayment);
+router.post('/storePayment', storePayment);
+router.get('/getUserPayment', getPayment);
 
 export default router;

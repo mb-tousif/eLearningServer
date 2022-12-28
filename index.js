@@ -22,6 +22,12 @@ app.get("/", (req, res) => {
   );
 });
 
+app.all("*", (req, res) => {
+  res.send(
+    "<h1 style='text-align: center; padding: 20px; color:red; margin-top: 4rem'><span style='color: green'>🛢 </span> Requested Route Not Found 🚀</h1>"
+  );
+});
+
 app.listen(port, (req, res) => {
   console.log(`Server running on PORT: ${port}`.rainbow.bold);
 });
