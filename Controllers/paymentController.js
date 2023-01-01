@@ -15,9 +15,6 @@ export const createPayment = async (req, res) => {
       amount: amount,
       currency: "usd",
       payment_method_types: ["card"],
-      success_url: `${process.env.CLIENT_URL}/payment-success`,
-      cancel_url: `${process.env.CLIENT_URL}/courses/cart`,
-      shipping_address_collection: { allowed_countries: ["GB", "US", "BD"] },
     });
     res.send({ clientSecret: paymentIntent.client_secret });
   } catch (error) {

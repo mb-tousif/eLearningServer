@@ -12,9 +12,9 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cors());
 
-Connection()
+Connection();
 
-app.use("/api/v1", router)
+app.use("/api/v1", router);
 
 app.get("/", (req, res) => {
   res.send(
@@ -29,5 +29,5 @@ app.all("*", (req, res) => {
 });
 
 app.listen(port, (req, res) => {
-  console.log(`Server running on PORT: ${port}`.rainbow.bold);
+  console.log(`Server running on PORT: ${port}`.cyan.bold);
 });
