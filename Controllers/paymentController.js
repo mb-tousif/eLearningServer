@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 import dotenv from "dotenv";
-import paymentData from "../Models/paymentModel.js";
+import { getPaymentData, postPayment } from "../Services/paymentServices.js";
 
 dotenv.config();
 
@@ -36,9 +36,8 @@ export const storePayment = async (req, res) => {
     if (exist) {
       return res.status(401).json({ message: "Your Payment already done" });
     } else {
-      const orderData = req.body;
-      const payment = new paymentData(orderData);
-      await payment.save();
+      const paymentInfo = req.body;
+      const payment = await postPayment(paymentInfo)
       res.status(200).json({ message: payment });
     }
   } catch (error) {
@@ -49,7 +48,7 @@ export const storePayment = async (req, res) => {
 //Payment details from database
 export const getPayment = async (req, res) => {
   try {
-    const purchasedCourse = await paymentData.find({ email: req.query.email });
+    const purchasedCourse = await getPaymentData();
     res.status(200).json(purchasedCourse);
   } catch (error) {
     res.status(500).json({ message: error.message });
