@@ -58,7 +58,7 @@ export const userSchema = new mongoose.Schema(
         values: ["Male", "Female", "Others"],
         message: "{VALUE} is not a correct type of Gender for user!",
       },
-      required: [true, "Role is required"],
+      required: [true, "Gender is required"],
     },
     status: {
       type: String,
