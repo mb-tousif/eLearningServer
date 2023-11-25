@@ -1,6 +1,7 @@
 import Stripe from "stripe";
 import dotenv from "dotenv";
 import { getPaymentData, postPayment } from "../Services/paymentServices.js";
+import paymentData from "../Models/paymentModel.js";
 
 dotenv.config();
 
