@@ -67,10 +67,6 @@ export const login = async (req, res) => {
       // },
       user: others,
       token,
-      // email: user.email,
-      // role: user.role,
-      // userStatus: user.status,
-      // token: user.token
     });
   } catch (error) {
     res.status(500).json({
