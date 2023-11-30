@@ -1,5 +1,5 @@
 # E-Learning Platform
-### [Live Site](https://e-learning-platform-frontend.netlify.app/ "E-Learning Platform")
+### [Live Site](https://e-learning-server-omega.vercel.app/ "E-Learning Platform")
 
 ### Key Features:
 [x]  A web application for online learning platform where student can buy courses.
