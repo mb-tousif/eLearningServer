@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
 
-
 export const courseSchema = new mongoose.Schema(
   {
     id: String,
