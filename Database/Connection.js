@@ -1,15 +1,15 @@
-import mongoose from "mongoose";
-import colors from "colors";
+import mongoose from "mongoose"
 import dotenv from "dotenv";
 dotenv.config();
 
 const Connection = async (req, res) => {
   const url = process.env.MONGODB_CONNECTION_URL;
   try {
+    mongoose.set("strictQuery", false);
     await mongoose.connect(url);
-    console.log("🥒 Database connection 🥑 is successful 🥕".blue.bold);
+    console.log("🥒 Database connection 🥑 is successful 🥕");
   } catch (error) {
-    console.log("🍅 Error while 👽 connecting with DB 🍄".red.bold);
+    console.log("🍅 Error while 👽 connecting with DB 🍄");
   }
 };
 
